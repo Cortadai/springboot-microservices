@@ -1,0 +1,60 @@
+version: "3.7"
+services:
+  departmentdb:
+    image: mysql:8.0
+    container_name: departmentdb
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: 'department_db'
+      MYSQL_USER: 'userdb'
+      MYSQL_PASSWORD: '1234'
+    ports:
+      - '3336:3306'
+    volumes:
+      - departmentdb_data:/var/lib/mysql
+    networks:
+      - servicesnetwork
+  employeedb:
+    image: mysql:8.0
+    container_name: employeedb
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: 'employee_db'
+      MYSQL_USER: 'userdb'
+      MYSQL_PASSWORD: '1234'
+    ports:
+      - '3366:3306'
+    volumes:
+      - employeedb_data:/var/lib/mysql
+    networks:
+      - servicesnetwork
+  organizationdb:
+    image: mysql:8.0
+    container_name: organizationdb
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: 'organization_db'
+      MYSQL_USER: 'userdb'
+      MYSQL_PASSWORD: '1234'
+    ports:
+      - '3386:3306'
+    volumes:
+      - organizationdb_data:/var/lib/mysql
+    networks:
+      - servicesnetwork
+  rabbitmq:
+    image: rabbitmq:3.10.5-management
+    container_name: rabbitmq-micro
+    ports:
+      - '15672:15672'
+      - '5672:5672'
+    networks:
+      - servicesnetwork
+volumes:
+  employeedb_data:
+  departmentdb_data:
+  organizationdb_data:
+networks:
+  servicesnetwork:
+    name: "servicesnetwork"
+    driver: bridge
