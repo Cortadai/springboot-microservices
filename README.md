@@ -1,17 +1,1 @@
-# springboot-microservices
-Microservices introduction
-
-* Build REST API's using Spring Boot - Important Spring MVC Annotations
-* Build CRUD REST API's using Spring Boot, Spring Data JPA and MySQL Database
-* Using Mapping libraries - ModelMapper
-* Spring Boot Actuator - Production-Ready Features
-* Building Spring Boot Microservices in IntelliJ IDEA
-* Microservices Communication using RestTemplate, WebClient and Cloud OpenFeign
-* Centralized Configurations using Spring Cloud Config Server
-* Create Service Registry and Discovery using Spring Cloud Netflix Eureka
-* Create API Gateway using Spring Cloud Gateway
-* Load balancing with Eureka server and Open Feign using Spring Cloud LoadBalancer
-* Auto Refresh Config Changes using Spring Cloud Bus
-* Distributed Tracing with Zipkin
-* Resilience4J: Circuit Breaker, Retry and RateLimiter Patterns
-* REST API Documentation using SpringDoc OpenAPI (Swagger) Library
+Este repositorio es un **proyecto educativo completo de arquitectura de microservicios** usando Spring Boot y Spring Cloud que simula un sistema de gestión organizacional con tres microservicios principales (Employee, Department y Organization), cada uno con su propia base de datos MySQL. El proyecto implementa todas las características clave de una arquitectura de microservicios moderna incluyendo: un API Gateway para enrutamiento centralizado, Service Registry con Eureka para descubrimiento de servicios, Config Server para configuración centralizada, comunicación entre servicios usando RestTemplate/WebClient/OpenFeign, patrones de resiliencia (Circuit Breaker, Retry, RateLimiter) con Resilience4J, rastreo distribuido con Zipkin, mensajería con RabbitMQ para auto-actualización de configuraciones mediante Spring Cloud Bus, balanceo de carga, y documentación automática de APIs con SpringDoc OpenAPI (Swagger), todo orquestado con Docker Compose para facilitar el despliegue y las pruebas.
